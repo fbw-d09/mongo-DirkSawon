@@ -1,0 +1,14 @@
+1. mongosh
+
+2. use meineDatenbank, show dbs
+
+3. 
+3.1  db.createCollection("meineKollektion"), show collections
+3.2 db.meineKollektion.insertMany([{tier: 'Katze', alter: 10, essen: ["Maus", "Pute", "Milch"]}, {tier: 'Elefant', alter: 95, essen: ["Bananen", "Grass", "Wasser"]}, {tier: 'Hund', alter:15, essen:["Trockenfutter", "Knochen"]}])
+3.3 db.meineKollektion.find({})
+3.4 meineDatenbank> db.meineKollektion.find({tier: "Elefant"})
+3.5 db.meineKollektion.find({ alter: { $lt: 80}})
+3.6 db.meineKollektion.updateOne({ tier: "Katze" }, { $pull: { essen: "Maus" }}),
+db.meineKollektion.updateOne({ tier: "Katze" }, { $push: { essen: "Mäuse"}})
+...
+3.7 db.meineKollektion.deleteOne({tier: "Katze"})
